@@ -15,6 +15,7 @@ var campgroundRoutes = require("./routes/campgrounds");
 var indexRoutes 		= require("./routes/index");
 
 console.log(process.env.DATABASEURL)
+console.log("hello from the change made to be on github")
 
 //SetUp App
 //local Database
