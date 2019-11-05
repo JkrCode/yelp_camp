@@ -15,7 +15,7 @@ var campgroundRoutes = require("./routes/campgrounds");
 var indexRoutes 		= require("./routes/index");
     
 //SetUp App
-mongoose.connect("mongodb+srv://dbUser:<pOzbruGGmFYWD1uJ>@cluster0-m6jjh.mongodb.net/test?retryWrites=true&w=majority",{useNewUrlParser: true,																							 useCreateIndex: true}).then (()=> "connected to db").catch(err =>{
+mongoose.connect("mongodb+srv://dbUser:pOzbruGGmFYWD1uJ@cluster0-m6jjh.mongodb.net/test?retryWrites=true&w=majority",{useNewUrlParser: true,																							 useCreateIndex: true}).then (()=> "connected to db").catch(err =>{
 	console.log("Error:", err.message)
 })
 
