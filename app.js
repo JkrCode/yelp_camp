@@ -13,11 +13,17 @@ var express     = require("express"),
 var commentRoutes	 = require("./routes/comments");
 var campgroundRoutes = require("./routes/campgrounds");
 var indexRoutes 		= require("./routes/index");
-    
+
+console.log(process.env.DATABASEURL)
+
 //SetUp App
-mongoose.connect("mongodb+srv://dbUser:pOzbruGGmFYWD1uJ@cluster0-m6jjh.mongodb.net/test?retryWrites=true&w=majority",{useNewUrlParser: true,																							 useCreateIndex: true}).then (()=> "connected to db").catch(err =>{
-	console.log("Error:", err.message)
-})
+//local Database
+ mongoose.connect(process.env.DATABASEURL,{useNewUrlParser: true})
+
+//atlas Mongo DB
+//mongoose.connect("mongodb+srv://dbUser:pOzbruGGmFYWD1uJ@cluster0-m6jjh.mongodb.net/test?retryWrites=true&w=majority",{useNewUrlParser: true,																//							 useCreateIndex: true}).then (()=> "connected to db").catch(err =>{
+	//console.log("Error:", err.message)
+//})
 
 app.use(methodOverride("_method"))
 app.use(bodyParser.urlencoded({extended: true}));
@@ -48,6 +54,6 @@ app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
 //Start Server
-app.listen(process.env.PORT, process.env.IP, function(){
+app.listen(process.env.PORT, function(){
    console.log("The YelpCamp Server Has Started!");
 });
