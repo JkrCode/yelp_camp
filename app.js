@@ -20,10 +20,6 @@ console.log(process.env.DATABASEURL)
 //local Database
  mongoose.connect(process.env.DATABASEURL,{useNewUrlParser: true})
 
-//atlas Mongo DB
-//mongoose.connect("mongodb+srv://dbUser:pOzbruGGmFYWD1uJ@cluster0-m6jjh.mongodb.net/test?retryWrites=true&w=majority",{useNewUrlParser: true,																//							 useCreateIndex: true}).then (()=> "connected to db").catch(err =>{
-	//console.log("Error:", err.message)
-//})
 
 app.use(methodOverride("_method"))
 app.use(bodyParser.urlencoded({extended: true}));
