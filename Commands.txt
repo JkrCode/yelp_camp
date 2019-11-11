@@ -1,0 +1,8 @@
+To start Mongo Server for local Use
+sudo service mongodb start
+
+then
+
+sudo service status
+
+////////////////
