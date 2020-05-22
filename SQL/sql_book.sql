@@ -1,0 +1,5 @@
+CREATE TABLE cats 
+(
+    name VARCHAR(255),
+    cat_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+);
